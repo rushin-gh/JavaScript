@@ -1,29 +1,33 @@
 let curResult = 0;
 let curCalculation = '0';
 
+addBtn.addEventListener('click', Add);
+subtractBtn.addEventListener('click', Subtract);
+multiplyBtn.addEventListener('click', Multiply);
+divideBtn.addEventListener('click', Divide);
 
-addBtn.addEventListener('click', function() {
+function Add() {
     let userInput = GetInput();
     if (!isNaN(userInput)) {
         OperateAndPrintResult('+', userInput);
     }
-});
+}
 
-subtractBtn.addEventListener('click', function() {
+function Subtract() {
     let userInput = GetInput();
     if (!isNaN(userInput)) {
         OperateAndPrintResult('-', userInput);
     }
-});
+}
 
-multiplyBtn.addEventListener('click', function() {
+function Multiply() {
     let userInput = GetInput();
     if (!isNaN(userInput)) {
         OperateAndPrintResult('*', userInput);
     }
-});
+}
 
-divideBtn.addEventListener('click', function() {
+function Divide() {
     let userInput = GetInput();
     if (!isNaN(userInput)) {
         if (userInput != 0) {
@@ -35,7 +39,7 @@ divideBtn.addEventListener('click', function() {
             toastr.warning('Cannot divide by 0');
         }
     }
-});
+}
 
 function OperateAndPrintResult(operation, userInput) {
     switch(operation) {
